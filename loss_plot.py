@@ -1,5 +1,6 @@
 import pickle
 import sys
+import os
 import matplotlib.pyplot as plt
 
 hist = {}
@@ -9,7 +10,6 @@ print(filename)
 
 with open(filename, 'rb') as f:
     hist = pickle.load(f)
-print(hist)
 
 x = range(len(hist['D_loss']))
 
@@ -26,9 +26,7 @@ plt.legend(loc=4)
 plt.grid(True)
 plt.tight_layout()
 
-path = os.path.join(path, model_name + '_loss.png')
-
-plt.savefig(path)
+plt.show()
 
 plt.close()
 
