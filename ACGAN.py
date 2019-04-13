@@ -83,7 +83,6 @@ class ACGAN(object):
     def __init__(self, args):
         # parameters
         self.epoch = args.epoch
-        self.sample_num = 100
         self.batch_size = args.batch_size
         self.save_dir = args.save_dir
         self.result_dir = args.result_dir

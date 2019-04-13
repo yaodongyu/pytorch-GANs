@@ -74,7 +74,7 @@ class WGAN_GP(object):
     def __init__(self, args):
         # parameters
         self.epoch = args.epoch
-        self.sample_num = 100
+        self.sample_num = 64
         self.batch_size = args.batch_size
         self.save_dir = args.save_dir
         self.result_dir = args.result_dir
@@ -207,7 +207,7 @@ class WGAN_GP(object):
         if not os.path.exists(self.result_dir + '/' + self.dataset + '/' + self.model_name):
             os.makedirs(self.result_dir + '/' + self.dataset + '/' + self.model_name)
 
-        tot_num_samples = min(self.sample_num, self.batch_size)
+        tot_num_samples = self.sample_num
         image_frame_dim = int(np.floor(np.sqrt(tot_num_samples)))
 
         if fix:
