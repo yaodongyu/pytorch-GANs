@@ -1,14 +1,10 @@
 import argparse, os, torch
 from GAN import GAN
-from CGAN import CGAN
 from LSGAN import LSGAN
-from DRAGAN import DRAGAN
 from ACGAN import ACGAN
 from WGAN import WGAN
 from WGAN_GP import WGAN_GP
 from infoGAN import infoGAN
-from EBGAN import EBGAN
-from BEGAN import BEGAN
 
 """parsing and configuration"""
 def parse_args():
@@ -78,24 +74,16 @@ def main():
         # declare instance for GAN
     if args.gan_type == 'GAN':
         gan = GAN(args)
-    elif args.gan_type == 'CGAN':
-        gan = CGAN(args)
     elif args.gan_type == 'ACGAN':
         gan = ACGAN(args)
     elif args.gan_type == 'infoGAN':
         gan = infoGAN(args, SUPERVISED=False)
-    elif args.gan_type == 'EBGAN':
-        gan = EBGAN(args)
     elif args.gan_type == 'WGAN':
         gan = WGAN(args)
     elif args.gan_type == 'WGAN_GP':
         gan = WGAN_GP(args)
-    elif args.gan_type == 'DRAGAN':
-        gan = DRAGAN(args)
     elif args.gan_type == 'LSGAN':
         gan = LSGAN(args)
-    elif args.gan_type == 'BEGAN':
-        gan = BEGAN(args)
     else:
         raise Exception("[!] There is no option for " + args.gan_type)
 
