@@ -89,7 +89,7 @@ class infoGAN(object):
         self.dataset = args.dataset
         self.log_dir = args.log_dir
         self.gpu_mode = args.gpu_mode
-        self.model_name = args.gan_type
+        self.model_name = args.gan_type + '_' + str(args.batch_size)
         self.input_size = args.input_size
         self.z_dim = 62
         self.SUPERVISED = SUPERVISED        # if it is true, label info is directly used for code
