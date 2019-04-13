@@ -125,6 +125,7 @@ class WGAN(object):
         print('training start!!')
         start_time = time.time()
         for epoch in range(self.epoch):
+            self.save()
             self.G.train()
             epoch_start_time = time.time()
             for iter, (x_, _) in enumerate(self.data_loader):

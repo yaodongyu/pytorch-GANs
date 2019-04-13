@@ -153,6 +153,7 @@ class ACGAN(object):
         print('training start!!')
         start_time = time.time()
         for epoch in range(self.epoch):
+            self.save()
             self.G.train()
             epoch_start_time = time.time()
             for iter, (x_, y_) in enumerate(self.data_loader):
